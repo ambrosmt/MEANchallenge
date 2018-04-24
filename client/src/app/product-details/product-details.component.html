@@ -1,0 +1,14 @@
+<div>
+  <h1>Product Details</h1>
+  <div *ngIf="item">
+    <div class="row"></div>
+    <h4>Name : </h4><h5>{{item.name}}</h5>
+    <h4>Quantity : </h4><h5>{{item.qty}}</h5>
+    <h4>Price : </h4><h5>${{item.price}}</h5>
+  </div>
+  <br>
+  <button [routerLink]="['']">Back</button>
+  <form *ngIf="canRemove" (submit)="removeItem()">
+    <button type="submit">Delete</button>
+  </form>
+</div>

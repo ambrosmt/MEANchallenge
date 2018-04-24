@@ -1,0 +1,16 @@
+<h1>
+  Update Product
+</h1>
+<form *ngIf="item" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <p *ngIf="nameErr">{{nameErr}}</p>
+  <input [(ngModel)]="item.name" type="text" id="name" name="name" (input)="onTxtChange($event.target.value)">
+  <br>
+  <label for="qty">Quantity:</label>
+  <input [(ngModel)]="item.qty" type="number" min=0 id="qty" name="qty">
+  <br>
+  <label for="price">Price:</label>
+  <p *ngIf="valErr">{{valErr}}</p>
+  <input [(ngModel)]="item.price" type="number" id="price" name="price" (input)="amountChange($event.target.value)">
+  <button *ngIf="submit" type="submit">Update</button>
+</form>
